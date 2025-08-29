@@ -39,7 +39,7 @@ public class Main {
                 ForecastResponse response = service.getForecast(API_KEY, city, 2).execute().body();
 
                 if(response != null && response.getForecast() != null) {
-                    ForecastDay nextDay = response.getForecast().getForecastday().get(1); // следующий день
+                    ForecastDay nextDay = response.getForecast().getForecastday().get(1);
 
                     double windKph = nextDay.getHour().get(15).getWindKph();
                     String windDir = nextDay.getHour().get(15).getWindDir();
